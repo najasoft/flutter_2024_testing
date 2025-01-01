@@ -6,6 +6,9 @@ class Favoris extends ChangeNotifier {
   List<int> get elements => List.unmodifiable(_elementsFavoris);
 
   void ajouter(int numeroElement) {
+    if (_elementsFavoris.contains(numeroElement)) {
+      return;
+    }
     _elementsFavoris.add(numeroElement);
     notifyListeners();
   }
